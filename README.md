@@ -2,6 +2,24 @@
 
 Try flutter !!
 
+## Develop with VSCode
+
+### Run simulator
+
+```bash
+# Type in cli
+open -a Simulator
+
+# OR Run in VSCode module
+Command + Shift + P > Flutter: Launch Emulator > [Do Stuff for run Simulator]
+```
+
+### Run Debugging in Simulator
+
+```
+Debug > Start Debugging > [Do Stuff for run]
+```
+
 ## Install packages
 
 ```yaml
