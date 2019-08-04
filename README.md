@@ -54,3 +54,9 @@ flutter:
 # After add the assets in yaml, do pacakges get.
 flutter pub get
 ```
+
+## VSCode Quick Fix
+
+```
+Command + .
+```

@@ -1,4 +1,5 @@
 // import 'package:doflutter/components/logintForm.dart';
+import 'package:doflutter/helpers/loginBackground.dart';
 import "package:flutter/material.dart";
 
 class AuthScreen extends StatelessWidget {
@@ -15,7 +16,10 @@ class AuthScreen extends StatelessWidget {
 
     return Scaffold(
         body: Stack(alignment: Alignment.center, children: <Widget>[
-      Container(color: Colors.white),
+      CustomPaint(
+        size: size,
+        painter: LoginBackground(),
+      ),
       Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.end,
