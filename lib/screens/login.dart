@@ -84,6 +84,7 @@ class AuthScreen extends StatelessWidget {
                       ),
                       TextFormField(
                         controller: _passwordController,
+                        obscureText: true,
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Please input correct Password";
