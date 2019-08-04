@@ -35,3 +35,22 @@ cupertino_icons: ^0.1.2
 # Type in cli. This command do install modules via the pubspec.yaml
 flutter pub get
 ```
+
+## Using Assets
+
+```yaml
+# In pubspec.yaml
+# Add Assets Folders in the root of the project
+# Remove Comment in assets section.
+
+flutter:
+  ...
+  assets:
+    - assets/images/loading.gif
+  ...
+```
+
+```bash
+# After add the assets in yaml, do pacakges get.
+flutter pub get
+```
