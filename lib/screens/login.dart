@@ -109,12 +109,19 @@ class AuthScreen extends StatelessWidget {
         left: buttonHorizontalPadding,
         right: buttonHorizontalPadding,
         bottom: 0,
-        child: RaisedButton(
-            child: Text("Login".toUpperCase()),
-            color: Colors.blue,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            onPressed: () => {})
+        child: SizedBox(
+            height: 50,
+            child: RaisedButton(
+                child: Text("Login".toUpperCase(),
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
+                color: Colors.blue[900],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+                onPressed: () {
+                  if (_loginFormKey.currentState.validate()) {
+                    print(_emailController.text.toString());
+                  }
+                }))
         // Container(width: 100, height: 100, color: Colors.black),
         );
   }
