@@ -20,21 +20,7 @@ class AuthScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Expanded(
-                child: Padding(
-              padding: EdgeInsets.only(top: 40, left: 24, right: 24),
-              child: FittedBox(
-                child: CircleAvatar(
-                    backgroundImage: NetworkImage("https://picsum.photos/300")),
-              ),
-            )),
-            // Get Image with FadeIn from network
-            // FadeInImage.assetNetwork(
-            //     placeholder: "assets/images/loading.gif",
-            //     image: "https://picsum.photos/300"),
-
-            // Get Image from local assets
-            // Image.asset("assets/images/loading.gif"),
+            _logoImage,
             Stack(children: <Widget>[
               _inputForm(size),
               _submitButton(size),
@@ -45,6 +31,22 @@ class AuthScreen extends StatelessWidget {
           ])
     ]));
   }
+
+  Widget get _logoImage => Expanded(
+          child: Padding(
+        padding: EdgeInsets.only(top: 40, left: 24, right: 24),
+        child: FittedBox(
+          child: CircleAvatar(
+              backgroundImage: NetworkImage("https://picsum.photos/300")),
+        ),
+      ));
+  // Get Image with FadeIn from network
+  // FadeInImage.assetNetwork(
+  //     placeholder: "assets/images/loading.gif",
+  //     image: "https://picsum.photos/300"),
+
+  // Get Image from local assets
+  // Image.asset("assets/images/loading.gif"),
 
   Widget _inputForm(Size size) {
     final double basicHeightPadding = size.height * 0.05;
