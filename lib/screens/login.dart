@@ -1,5 +1,6 @@
 // import 'package:doflutter/components/logintForm.dart';
 import 'package:doflutter/helpers/loginBackground.dart';
+import 'package:doflutter/screens/firstRoute.dart';
 import "package:flutter/material.dart";
 
 class AuthScreen extends StatelessWidget {
@@ -27,7 +28,7 @@ class AuthScreen extends StatelessWidget {
             _logoImage,
             Stack(children: <Widget>[
               _inputForm(size),
-              _submitButton(size),
+              _submitButton(size, context),
             ]),
             Container(height: basicHeightPadding),
             Text("Don't have an Account? Create One"),
@@ -107,7 +108,7 @@ class AuthScreen extends StatelessWidget {
         ));
   }
 
-  Widget _submitButton(Size size) {
+  Widget _submitButton(Size size, BuildContext context) {
     final double buttonHorizontalPadding = size.width * 0.15;
 
     return Positioned(
@@ -126,6 +127,9 @@ class AuthScreen extends StatelessWidget {
                   if (_loginFormKey.currentState.validate()) {
                     print(_emailController.text.toString());
                   }
+
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FirstRoute()));
                 }))
         // Container(width: 100, height: 100, color: Colors.black),
         );

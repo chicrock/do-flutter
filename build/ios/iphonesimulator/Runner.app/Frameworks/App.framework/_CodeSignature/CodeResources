@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		cXD6MfAROXd0jSQBC7Vzn64Kj2o=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -19,6 +19,10 @@
 		<key>flutter_assets/LICENSE</key>
 		<data>
 		unJstGh/YylWuvG/EHY8TewUoFY=
+		</data>
+		<key>flutter_assets/assets/images/loading.gif</key>
+		<data>
+		+xAcftgU/lRD1vLksk50i2puhg0=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
 		<data>
@@ -30,7 +34,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		Am9JtAPw7uroZjzSl4JsmjoAkmY=
+		ehtDAgBE/LGSqUHmdrO6Hs7AIOA=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -47,11 +51,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+			cXD6MfAROXd0jSQBC7Vzn64Kj2o=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			AiRhDZLRKs4b/yEV3gJB0Ubzr0x7IbJ4sjyTC2bdAmw=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -74,6 +78,17 @@
 			<key>hash2</key>
 			<data>
 			ZCler/whOjVXBztwOJLkff/BXvInslR8e+SzI0qD37A=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/loading.gif</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+xAcftgU/lRD1vLksk50i2puhg0=
+			</data>
+			<key>hash2</key>
+			<data>
+			dpnecyxeLtwJ6xeZNF+ZuANR78zb8r/wSE8VVRi6hTI=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
@@ -102,11 +117,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Am9JtAPw7uroZjzSl4JsmjoAkmY=
+			ehtDAgBE/LGSqUHmdrO6Hs7AIOA=
 			</data>
 			<key>hash2</key>
 			<data>
-			NrOXtRQiGA4pTmxNmQfsIz2eJan5cVGHh0wkF17XbpY=
+			d9jWyoBvvaU6+hhyiWQXDn0ExVEz2sPJzTpKy1Z1JzI=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -134,7 +149,7 @@
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -165,24 +180,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -218,13 +221,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>
