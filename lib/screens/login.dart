@@ -31,14 +31,23 @@ class AuthScreen extends StatelessWidget {
             _logoImage,
             Stack(children: <Widget>[
               _inputForm(size),
-              _submitButton(size, context),
+              _submitButton(size),
             ]),
             Container(height: basicHeightPadding),
-            GestureDetector(
-                onTap: () {
-                  joinOrLoginProvider.toggle();
-                },
-                child: Text("Don't have an Account? Create One")),
+            Consumer<JoinOrLogin>(
+              builder: (BuildContext context, JoinOrLogin value,
+                      Widget child) =>
+                  GestureDetector(
+                      onTap: () {
+                        value.toggle();
+                      },
+                      child: Text(
+                          value.isJoin
+                              ? "Already have an Account? Sign in"
+                              : "Don't have an Account? Create One",
+                          style: TextStyle(
+                              color: value.isJoin ? Colors.red : Colors.blue))),
+            ),
             Container(height: basicHeightPadding)
           ])
     ]));
@@ -49,7 +58,7 @@ class AuthScreen extends StatelessWidget {
         padding: EdgeInsets.only(top: 40, left: 24, right: 24),
         child: FittedBox(
           child: CircleAvatar(
-              backgroundImage: NetworkImage("https://picsum.photos/300")),
+              backgroundImage: AssetImage("assets/images/login.gif")),
         ),
       ));
   // Get Image with FadeIn from network
@@ -109,13 +118,16 @@ class AuthScreen extends StatelessWidget {
                             labelText: "Password".toUpperCase()),
                       ),
                       Container(height: halfHeightPadding),
-                      Text("Forgot Password")
+                      Consumer<JoinOrLogin>(
+                          builder: (BuildContext context, JoinOrLogin value,
+                                  Widget child) =>
+                              value.isJoin ? Text("") : Text("Forgot Password"))
                     ],
                   ))),
         ));
   }
 
-  Widget _submitButton(Size size, BuildContext context) {
+  Widget _submitButton(Size size) {
     final double buttonHorizontalPadding = size.width * 0.15;
 
     return Positioned(
@@ -124,20 +136,29 @@ class AuthScreen extends StatelessWidget {
         bottom: 0,
         child: SizedBox(
             height: 50,
-            child: RaisedButton(
-                child: Text("Login".toUpperCase(),
-                    style: TextStyle(fontSize: 20, color: Colors.white)),
-                color: Colors.blue[900],
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
-                onPressed: () {
-                  if (_loginFormKey.currentState.validate()) {
-                    print(_emailController.text.toString());
-                  }
+            child: Consumer<JoinOrLogin>(
+                builder: (BuildContext context, JoinOrLogin value,
+                        Widget child) =>
+                    RaisedButton(
+                        child: Text(
+                            value.isJoin
+                                ? "Join".toUpperCase()
+                                : "Login".toUpperCase(),
+                            style:
+                                TextStyle(fontSize: 20, color: Colors.white)),
+                        color: value.isJoin ? Colors.red : Colors.blue[900],
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25)),
+                        onPressed: () {
+                          if (_loginFormKey.currentState.validate()) {
+                            print(_emailController.text.toString());
+                          }
 
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => FirstRoute()));
-                }))
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FirstRoute()));
+                        })))
         // Container(width: 100, height: 100, color: Colors.black),
         );
   }

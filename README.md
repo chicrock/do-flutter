@@ -64,3 +64,21 @@ Command + .
 ## Provider
 
 Use Provider for stores
+
+```dart
+// Using when read widget context
+JoinOrLogin joinOrLogin = Provider.of<JoinOrLogin>(context);
+bool isJoin = joinOrLogin.isJoin;
+
+// OR
+
+// Using when cannot read widget context
+// Consumer returns the widget context and provider and child widget
+Consumer<JoinOrLogin> (
+  builder: (BuildContext context, JoinOrLogin value, Widget child) => GestureDetector(
+    onTab: () {
+      bool isJoin = value.isJoin;
+    }
+  )
+)
+```
