@@ -60,3 +60,7 @@ flutter pub get
 ```
 Command + .
 ```
+
+## Provider
+
+Use Provider for stores

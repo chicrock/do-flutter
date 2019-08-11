@@ -1,7 +1,9 @@
 // import 'package:doflutter/components/logintForm.dart';
 import 'package:doflutter/helpers/loginBackground.dart';
 import 'package:doflutter/screens/firstRoute.dart';
+import 'package:doflutter/stores/joinOrLogin.dart';
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 
 class AuthScreen extends StatelessWidget {
   // Create Formkey for using in the Form
@@ -14,12 +16,13 @@ class AuthScreen extends StatelessWidget {
     // Get device size
     final Size size = MediaQuery.of(context).size;
     final double basicHeightPadding = size.height * 0.05;
+    final JoinOrLogin joinOrLoginProvider = Provider.of<JoinOrLogin>(context);
 
     return Scaffold(
         body: Stack(alignment: Alignment.center, children: <Widget>[
       CustomPaint(
         size: size,
-        painter: LoginBackground(),
+        painter: LoginBackground(isJoin: joinOrLoginProvider.isJoin),
       ),
       Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,7 +34,11 @@ class AuthScreen extends StatelessWidget {
               _submitButton(size, context),
             ]),
             Container(height: basicHeightPadding),
-            Text("Don't have an Account? Create One"),
+            GestureDetector(
+                onTap: () {
+                  joinOrLoginProvider.toggle();
+                },
+                child: Text("Don't have an Account? Create One")),
             Container(height: basicHeightPadding)
           ])
     ]));
