@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/LICENSE</key>
 		<data>
-		sFMYidSZb+cIulfKq+jvkN7R45k=
+		ZgNxvakbKktclIchE6B3cQGJQFg=
 		</data>
 		<key>flutter_assets/assets/images/loading.gif</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		LSh6Gr4oPx3VcEphjqlhlkuXGAM=
+		oLnAWCtrHBUHhgqHLmeMGl72dW4=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -77,11 +77,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sFMYidSZb+cIulfKq+jvkN7R45k=
+			ZgNxvakbKktclIchE6B3cQGJQFg=
 			</data>
 			<key>hash2</key>
 			<data>
-			AdO/DdrHIuwV0m6yG2fwodIc7jKaTBxDw8uR2SfVltY=
+			3awWioFoddHWwh3uQB/kAe6N6DoUBeSayeBCHTmr7xQ=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/loading.gif</key>
@@ -132,11 +132,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LSh6Gr4oPx3VcEphjqlhlkuXGAM=
+			oLnAWCtrHBUHhgqHLmeMGl72dW4=
 			</data>
 			<key>hash2</key>
 			<data>
-			vfGU7EAqRvOtaS3zGmetwn87MqSZp2e3aJEWdCaA5vA=
+			s1cmjbZECarM71JeMe+/dOojnPWeKRlPrIXGovrbpFs=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -164,7 +164,7 @@
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -195,24 +195,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -248,13 +236,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>

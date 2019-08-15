@@ -89,3 +89,4 @@ Using Firebase Auth pub
 [Firebase Auth Pub](https://pub.dev/packages/firebase_auth)
 
 - At least Xcode 10.1
+- Have to add GoogleService-info.plist file in the IOS project > Runner > Runner folder via XCode

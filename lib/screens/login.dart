@@ -1,5 +1,6 @@
 // import 'package:doflutter/components/logintForm.dart';
 import 'package:doflutter/helpers/loginBackground.dart';
+import 'package:doflutter/screens/forget_password.dart';
 // import 'package:doflutter/screens/firstRoute.dart';
 // import 'package:doflutter/screens/main_page.dart';
 import 'package:doflutter/stores/joinOrLogin.dart';
@@ -155,10 +156,21 @@ class AuthScreen extends StatelessWidget {
                       Consumer<JoinOrLogin>(
                           builder: (BuildContext context, JoinOrLogin value,
                                   Widget child) =>
-                              value.isJoin ? Text("") : Text("Forgot Password"))
+                              value.isJoin
+                                  ? Text('')
+                                  : GestureDetector(
+                                      onTap: () {
+                                        _goForgetPassword(context);
+                                      },
+                                      child: Text("Forgot Password")))
                     ],
                   ))),
         ));
+  }
+
+  void _goForgetPassword(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ForgetPassword()));
   }
 
   Widget _submitButton(Size size) {
