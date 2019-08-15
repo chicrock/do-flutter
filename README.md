@@ -82,3 +82,10 @@ Consumer<JoinOrLogin> (
   )
 )
 ```
+
+## Firebase Auth
+
+Using Firebase Auth pub
+[Firebase Auth Pub](https://pub.dev/packages/firebase_auth)
+
+- At least Xcode 10.1

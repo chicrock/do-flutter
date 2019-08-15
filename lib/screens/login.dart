@@ -1,7 +1,9 @@
 // import 'package:doflutter/components/logintForm.dart';
 import 'package:doflutter/helpers/loginBackground.dart';
-import 'package:doflutter/screens/firstRoute.dart';
+// import 'package:doflutter/screens/firstRoute.dart';
+// import 'package:doflutter/screens/main_page.dart';
 import 'package:doflutter/stores/joinOrLogin.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
 
@@ -51,6 +53,38 @@ class AuthScreen extends StatelessWidget {
             Container(height: basicHeightPadding)
           ])
     ]));
+  }
+
+  void _register(BuildContext context) async {
+    final AuthResult result = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+            email: _emailController.text, password: _passwordController.text);
+
+    final FirebaseUser user = result.user;
+
+    if (user == null) {
+      final snackbar = SnackBar(content: Text('Please try again later.'));
+      Scaffold.of(context).showSnackBar(snackbar);
+    }
+
+    // Navigator.push(context,
+    //     MaterialPageRoute(builder: (context) => MainPage(email: user.email)));
+  }
+
+  void _login(BuildContext context) async {
+    final AuthResult result = await FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+            email: _emailController.text, password: _passwordController.text);
+
+    final FirebaseUser user = result.user;
+
+    if (user == null) {
+      final snackbar = SnackBar(content: Text('Please try again later.'));
+      Scaffold.of(context).showSnackBar(snackbar);
+    }
+
+    // Navigator.push(context,
+    //     MaterialPageRoute(builder: (context) => MainPage(email: user.email)));
   }
 
   Widget get _logoImage => Expanded(
@@ -154,10 +188,12 @@ class AuthScreen extends StatelessWidget {
                             print(_emailController.text.toString());
                           }
 
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FirstRoute()));
+                          value.isJoin ? _register(context) : _login(context);
+
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => FirstRoute()));
                         })))
         // Container(width: 100, height: 100, color: Colors.black),
         );

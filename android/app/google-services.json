@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "927706436750",
+    "firebase_url": "https://fir-auth-test-b440a.firebaseio.com",
+    "project_id": "fir-auth-test-b440a",
+    "storage_bucket": "fir-auth-test-b440a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927706436750:android:597a6b8127030ea7",
+        "android_client_info": {
+          "package_name": "com.example.doflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927706436750-k659iq4r3jhbp7fuaj6fl4nf2d9m5241.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAkk19mknhiTBucsrGJCs_-FnxvVGoEp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927706436750-k659iq4r3jhbp7fuaj6fl4nf2d9m5241.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
